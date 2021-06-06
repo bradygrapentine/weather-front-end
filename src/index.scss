@@ -10,3 +10,34 @@ body {
   margin: 0;
   min-height: 100%;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+button {
+  margin: 1rem;
+}
+
+input {
+  margin: 1rem;
+  width: 10.45rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
