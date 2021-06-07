@@ -32,6 +32,8 @@ Adventure Mode
 
     - Store the Users last search and use it to search for the value on page load. HINT: localstorage
 
+    <!-- DONE ->
+
     - Remove the need for the search button and search when the user stops typing. HINT: use setTimeout and the change event. to track when the user stops typing.
 
 Epic Mode

@@ -3,7 +3,10 @@ import React, { useState, useEffect } from 'react'
 import ls from 'local-storage'
 
 export function App() {
-  let [location, setLocation] = useState('Tampa')
+  let [location, setLocation] = useState(
+    localStorage.getItem('location') || 'Tampa'
+  )
+  // let [location, setLocation] = useState('')
   let [temp, setTemp] = useState(null)
   let [feelsLike, setFeelsLike] = useState(null)
   let [humidity, setHumidity] = useState(null)
@@ -14,6 +17,12 @@ export function App() {
   let [snow, setSnow] = useState({})
   let [rain, setRain] = useState({})
   let [cityName, setCityName] = useState('')
+
+  // like componentDidMount
+  // useEffect(function () {
+  //   const newLocation = localStorage.getItem('location') || 'Tampa'
+  //   setLocation(newLocation)
+  // }, [])
 
   async function loadWeather() {
     if (isValidZip(location)) {
@@ -101,11 +110,22 @@ export function App() {
   //   })
   // }
 
+  function updateLocation(newLocation) {
+    setLocation(newLocation)
+    localStorage.setItem('location', newLocation)
+  }
+
   useEffect(function () {
     // let savedLocation = localStorage.getItem('savedLocation')
     // savedLocation ? setLocation(JSON.parse(savedLocation)) : {}
     loadWeather()
   }, [])
+
+  // useEffect(
+  //   function () {
+  //     localStorage.setItem('location', location)
+  //   }[location]
+  // )
 
   return (
     <main>
@@ -114,8 +134,9 @@ export function App() {
         type="text"
         placeholder="Enter Zip-code or City Name"
         value={location}
-        onChange={(event) => setLocation(event.target.value)}
-      ></input>
+        // onChange={(event) => setLocation(event.target.value)}
+        onChange={(event) => updateLocation(event.target.value)}
+      />
       <button className="search" onClick={loadWeather}>
         Get Forecast
       </button>
