@@ -16,9 +16,15 @@ Explorer Mode
 
     - Allow the user to type in a place, click the search button, and ,  using openweathermap.org, get the current weather for that location.
 
+    <!-- DONE ->
+
     - Display the weather to user by adding elements to the DOM.
 
+    <!-- DONE ->
+
     - Allow the user to search by zip or city name.
+
+    <!-- DONE ->
 
 Adventure Mode
 
