@@ -115,10 +115,26 @@ export function App() {
     localStorage.setItem('location', newLocation)
   }
 
+  // async function loadFromLatAndLong(lat, long) {
+  //   const response = await axios.get(
+  //     `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=d1ed4e2246ee255a3e6881943fd96a29`
+  //     )
+  //     if (response.status == 200) {
+  //       set
+  //     }
+  // }
+
   useEffect(function () {
     // let savedLocation = localStorage.getItem('savedLocation')
     // savedLocation ? setLocation(JSON.parse(savedLocation)) : {}
+    // if (navigator.geolocation) {
+    // navigator.geolocation.getCurrentPosition(position =>{
+    // const { latitude, longitude } = position.coords
+    // })
+
+    // } else {
     loadWeather()
+    // }
   }, [])
 
   // useEffect(
